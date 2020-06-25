@@ -6,6 +6,12 @@
  To be fair in comparison ot the paid C# libraries the APIs were a lot better ($8000 vs $6 conservative on .NET vs API, $3000 vs $30 maximum)
 
 # How To Run
+ Install Dependencies
+ ```
+ cd HTI
+ yarn
+ ```
+
  Development:
  ```
  cd HTI
