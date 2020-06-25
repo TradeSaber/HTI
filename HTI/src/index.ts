@@ -7,7 +7,7 @@ const port = process.env.PORT || '6000'
 
 app.use(bodyParser.json())
 
-app.get('/hti', genHandler)
+app.post('/hti', genHandler)
 
 app.listen(port, err => {
     if (err) return console.error("Failed to start HTI web server: " + err)
