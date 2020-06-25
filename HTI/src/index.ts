@@ -4,9 +4,9 @@ import { genHandler } from './handlers'
 
 const app = express()
 const port = process.env.PORT || '6000'
-const limit = process.env.LIMIT || '15mb'
 
-app.use(bodyParser.json({ limit: limit }))
+app.use(bodyParser({ limit: '15mb' }))
+app.use(bodyParser.json({ limit: '15mb' }))
 
 app.post('/hti', genHandler)
 
