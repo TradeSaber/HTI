@@ -16,8 +16,13 @@ async function launch(html: string, width: number, height: number) {
     const page = await browser.newPage()
     await page.setViewport({
         width: width,
-        height: height
+        height: height,
+
     })
     await page.setContent(html)
-    return await page.screenshot()
+    const screenshot = await page.screenshot({
+        omitBackground: true
+    })
+    await page.close()
+    return screenshot
 }
