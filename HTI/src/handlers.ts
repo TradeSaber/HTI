@@ -18,6 +18,13 @@ async function launch(html: string, width: number, height: number) {
         width: width,
         height: height
     })
+    page.setJavaScriptEnabled(false)
+    page.on('request', request => {
+        if (request.resourceType() === 'script')
+            request.abort()
+        else
+            request.continue()
+    })
     await page.setContent(html)
     await page.evaluate('document.fonts.ready')
     await page.evaluate(() => document.body.style.background = 'transparent')
